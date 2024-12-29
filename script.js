@@ -86,34 +86,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setInterval(createFireworks, 800);
   animate();
-  const photoContainer = document.querySelector(".random-photos");
-  const photoPaths = ["aa1.jpg", "aa2.jpg", "aa3.jpg", "aa4.jpg","aa5.jpg"]; // Add your photo paths here
-
-  function getRandomPosition() {
-    const x = Math.random() * window.innerWidth; // Full viewport width
-    const y = Math.random() * window.innerHeight; // Full viewport height
-    return { x, y };
-  }
-
-  function createRandomPhoto() {
-    const photo = document.createElement("div");
-    photo.classList.add("random-photo");
-    const randomPhoto =
-      photoPaths[Math.floor(Math.random() * photoPaths.length)];
-    photo.style.backgroundImage = `url(${randomPhoto})`;
-
-    const { x, y } = getRandomPosition();
-    photo.style.left = `${x}px`;
-    photo.style.top = `${y}px`;
-
-    photoContainer.appendChild(photo);
-
-    // Remove the photo after the animation completes
-    setTimeout(() => {
-      photo.remove();
-    }, 5000); // Match animation duration
-  }
-
-  // Generate random photos at intervals
-  setInterval(createRandomPhoto, 1000); // Adjust interval for more or fewer photos
 });
