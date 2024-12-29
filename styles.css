@@ -126,3 +126,28 @@ canvas#fireworks {
 #play-button:focus {
   outline: none; /* Remove the default outline on focus */
 }
+.random-photo {
+  position: absolute;
+  width: 150px; /* Adjust as needed */
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px; /* Optional: rounded corners */
+  animation: random-animation 5s infinite ease-in-out;
+  opacity: 0;
+}
+
+@keyframes random-animation {
+  0% {
+    transform: scale(0.5); /* Start slightly smaller */
+    opacity: 0;
+  }
+  50% {
+    opacity: 1; /* Fully visible in the middle of the animation */
+  }
+  100% {
+    transform: scale(1); /* End at normal size */
+    opacity: 0;
+  }
+}
+
